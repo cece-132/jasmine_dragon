@@ -58,7 +58,6 @@ Maybe you can mention me or this repo in the acknowledgements too
   * [Screenshots](#camera-screenshots)
   * [Tech Stack](#space_invader-tech-stack)
   * [Features](#dart-features)
-  * [Color Reference](#art-color-reference)
   * [Environment Variables](#key-environment-variables)
 - [Getting Started](#toolbox-getting-started)
   * [Prerequisites](#bangbang-prerequisites)
@@ -68,10 +67,9 @@ Maybe you can mention me or this repo in the acknowledgements too
   * [Deployment](#triangular_flag_on_post-deployment)
 - [Usage](#eyes-usage)
 - [Roadmap](#compass-roadmap)
+- [Stetch Goals](#smirk-stretch-goals)
 - [Contributing](#wave-contributing)
-  * [Code of Conduct](#scroll-code-of-conduct)
 - [FAQ](#grey_question-faq)
-- [License](#warning-license)
 - [Contact](#handshake-contact)
 - [Acknowledgements](#gem-acknowledgements)
 
@@ -79,7 +77,6 @@ Maybe you can mention me or this repo in the acknowledgements too
 
 <!-- About the Project -->
 ## :star2: About the Project
-
 
 <!-- Screenshots -->
 ### :camera: Screenshots
@@ -95,10 +92,7 @@ Maybe you can mention me or this repo in the acknowledgements too
 <details>
   <summary>Client</summary>
   <ul>
-    <li><a href="https://www.typescriptlang.org/">Typescript</a></li>
-    <li><a href="https://nextjs.org/">Next.js</a></li>
-    <li><a href="https://reactjs.org/">React.js</a></li>
-    <li><a href="https://tailwindcss.com/">TailwindCSS</a></li>
+    <li><a href="https://rubyonrails.org/">Rails</a></li>
   </ul>
 </details>
 
@@ -130,8 +124,6 @@ Maybe you can mention me or this repo in the acknowledgements too
 <details>
 <summary>DevOps</summary>
   <ul>
-    <li><a href="https://www.docker.com/">Docker</a></li>
-    <li><a href="https://www.jenkins.io/">Jenkins</a></li>
     <li><a href="https://circleci.com/">CircleCLI</a></li>
   </ul>
 </details>
@@ -158,21 +150,7 @@ To run this project, you will need to add the following environment variables to
 <!-- Prerequisites -->
 ### :bangbang: Prerequisites
 
-This project uses Rails
-
-```bash
- npm install --global yarn
-```
-
-<!-- Installation -->
-### :gear: Installation
-
-Install my-project with npm
-
-```bash
-  yarn install my-project
-  cd my-project
-```
+This project uses `Rails 5.2.8.1` and `Ruby 2.7.2`
    
 <!-- Running Tests -->
 ### :test_tube: Running Tests
@@ -180,7 +158,7 @@ Install my-project with npm
 To run tests, run the following command
 
 ```bash
-  yarn test test
+  bundle exec rspec spec
 ```
 
 <!-- Run Locally -->
@@ -189,25 +167,19 @@ To run tests, run the following command
 Clone the project
 
 ```bash
-  git clone https://github.com/Louis3797/awesome-readme-template.git
+  git clone https://github.com/cece-132/jasmine_dragon.git
 ```
 
 Go to the project directory
 
 ```bash
-  cd my-project
-```
-
-Install dependencies
-
-```bash
-  yarn install
+  cd jasmine_dragon
 ```
 
 Start the server
 
 ```bash
-  yarn start
+  rails server
 ```
 
 
@@ -217,29 +189,26 @@ Start the server
 To deploy this project run
 
 ```bash
-  yarn deploy
+  localhost:3000
 ```
 
 
 <!-- Usage -->
 ## :eyes: Usage
 
-Use this space to tell a little more about your project and how it can be used. Show additional screenshots, code samples, demos or link to other resources.
+This API is an api that is going to manage a tea subscription service. a user can manage the subscriptions they are subscribed to as well as the tea's associated with that customer's subscription
 
-
-```javascript
-import Component from 'my-project'
-
-function App() {
-  return <Component />
-}
-```
 
 <!-- Roadmap -->
 ## :compass: Roadmap
 
-* [x] Todo 1
-* [ ] Todo 2
+* [ ] An endpoint to subscribe a customer to a tea subscription
+* [ ] An endpoint to cancel a customer’s tea subscription
+* [ ] An endpoint to see all of a customer’s subsciptions (active and cancelled)
+
+## :smirk: Stretch Goals
+
+* [ ] Create a Tea that holds tea information that I need for this API that has basic CRUD
 
 
 <!-- Contributing -->
@@ -255,11 +224,6 @@ Contributions are always welcome!
 See `contributing.md` for ways to get started.
 
 
-<!-- Code of Conduct -->
-### :scroll: Code of Conduct
-
-Please read the [Code of Conduct](https://github.com/Louis3797/awesome-readme-template/blob/master/CODE_OF_CONDUCT.md)
-
 <!-- FAQ -->
 ## :grey_question: FAQ
 
@@ -272,27 +236,20 @@ Please read the [Code of Conduct](https://github.com/Louis3797/awesome-readme-te
   + Answer 2
 
 
-<!-- License -->
-## :warning: License
-
-Distributed under the no License. See LICENSE.txt for more information.
-
 
 <!-- Contact -->
 ## :handshake: Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
+Candace Eckels - [LinkedIn](https://www.linkedin.com/in/candace-eckels-b66089201/) - candace.eckels@gmail.com
 
-Project Link: [https://github.com/Louis3797/awesome-readme-template](https://github.com/Louis3797/awesome-readme-template)
+Project Link: [https://github.com/cece-132/jasmine_dragon](https://github.com/cece-132/jasmine_dragon)
 
 
 <!-- Acknowledgments -->
 ## :gem: Acknowledgements
 
-Use this section to mention useful resources and libraries that you have used in your projects.
-
- - [Shields.io](https://shields.io/)
+Round of applause for the resources I was able to use in this project
+ - [DB Designer](https://www.dbdesigner.net/)
  - [Awesome README](https://github.com/matiassingers/awesome-readme)
  - [Emoji Cheat Sheet](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md#travel--places)
- - [Readme Template](https://github.com/othneildrew/Best-README-Template)
 
