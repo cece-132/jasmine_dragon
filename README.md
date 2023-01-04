@@ -58,7 +58,7 @@ Maybe you can mention me or this repo in the acknowledgements too
   * [Screenshots](#camera-screenshots)
   * [Tech Stack](#space_invader-tech-stack)
   * [Features](#dart-features)
-  * [Environment Variables](#key-environment-variables)
+  * [Environment Variables](#key-endpoints)
 - [Getting Started](#toolbox-getting-started)
   * [Prerequisites](#bangbang-prerequisites)
   * [Installation](#gear-installation)
@@ -125,13 +125,14 @@ Maybe you can mention me or this repo in the acknowledgements too
 - An endpoint to see all of a customer’s subsciptions (active and cancelled)
 
 <!-- Env Variables -->
-### :key: Environment Variables
+### :key: Endpoints
 
-To run this project, you will need to add the following environment variables to your .env file
+Here are the endpoints for this project:
 
-`API_KEY`
+ - `endpoint A`
+ - `endpoint B`
+ - `endpoint C`
 
-`ANOTHER_API_KEY`
 
 <!-- Getting Started -->
 ## 	:toolbox: Getting Started
@@ -175,7 +176,7 @@ Start the server
 <!-- Deployment -->
 ### :triangular_flag_on_post: Deployment
 
-To deploy this project run
+To deploy this project open
 
 ```bash
   localhost:3000
