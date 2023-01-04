@@ -22,6 +22,14 @@ class Api::V1::CustomerSubscriptionsController < ApplicationController
     end
   end
 
+  def destroy
+    if CustomerSubscription.exists?(params[:id])
+      CustomerSubscription.destroy(params[:id])
+    else
+      render json: { error: 'No customer subscription found' }, status: 404
+    end
+  end
+
   private
 
   def cus_sub_params

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       post "/customer_subscription", to: 'customer_subscriptions#create'
       patch "/customer_subscription/:id", to: 'customer_subscriptions#update'
+      delete "/customer_subscription/:id", to: 'customer_subscriptions#destroy'
     end
   end
 

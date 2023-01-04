@@ -117,4 +117,50 @@ RSpec.describe "Customer Subscriptions" do
     end
 
   end
+
+  describe 'Destroy' do
+    it 'can destroy a record' do
+      cus1 = Customer.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.safe_email, address: Faker::Address.full_address)
+      sub1 = Subscription.create(title: Faker::Emotion.adjective, price: Faker::Number.number(digits: 4), status: "Active", frequency: "30")
+      tea5 = Tea.create(title: Faker::Tea.variety, description: Faker::Lorem.paragraph, temperature: Faker::Number.between(from: 140, to: 212), brew_time: Faker::Number.between(from: 180, to: 300 ))
+      tea_sub1 = SubscriptionTea.create(subscription_id: sub1.id, tea_id: tea5)
+      cus_sub1 = CustomerSubscription.create(customer_id: cus1.id , subscription_id: sub1.id , status: "Active")
+      
+      cus_sub_params = ( {
+        customer_id: cus1.id,
+        subscription_id: sub1.id,
+        status: "Active"
+      })
+      headers = {"CONTENT_TYPE" => "application/json"}
+
+      delete "/api/v1/customer_subscription/#{cus_sub1.id}", headers: headers, params: JSON.generate(customer_subscription: cus_sub_params)
+
+      expect(response).to have_http_status(204)
+      expect(CustomerSubscription.count).to eq(0)
+      expect{CustomerSubscription.find(cus_sub1.id)}.to raise_error(ActiveRecord::RecordNotFound)
+    end
+
+    it 'returns 404 if customer subscription not found' do
+      cus1 = Customer.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.safe_email, address: Faker::Address.full_address)
+      sub1 = Subscription.create(title: Faker::Emotion.adjective, price: Faker::Number.number(digits: 4), status: "Active", frequency: "30")
+      tea5 = Tea.create(title: Faker::Tea.variety, description: Faker::Lorem.paragraph, temperature: Faker::Number.between(from: 140, to: 212), brew_time: Faker::Number.between(from: 180, to: 300 ))
+      tea_sub1 = SubscriptionTea.create(subscription_id: sub1.id, tea_id: tea5)
+      cus_sub1 = CustomerSubscription.create(customer_id: cus1.id , subscription_id: sub1.id , status: "Active")
+      
+      cus_sub_params = ( {
+        customer_id: cus1.id,
+        subscription_id: sub1.id,
+        status: "Active"
+      })
+      headers = {"CONTENT_TYPE" => "application/json"}
+
+      delete "/api/v1/customer_subscription/83027492047", headers: headers, params: JSON.generate(customer_subscription: cus_sub_params)
+
+      expect(response).to have_http_status(404)
+
+      found = CustomerSubscription.find(cus_sub1.id)
+      expect(found).to eq cus_sub1
+    end
+  end
+
 end
