@@ -5,7 +5,7 @@ class Api::V1::CustomerSubscriptionsController < ApplicationController
     if cus_sub.save
       render json: CustomerSubscriptionSerializer.new(cus_sub), status: 201
     else
-      render status: 404
+      render json: { error: 'Unsuccessful Creation' }, status: 404
     end
   end
 
