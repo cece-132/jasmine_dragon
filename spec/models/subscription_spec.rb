@@ -5,7 +5,7 @@ RSpec.describe Subscription, type: :model do
     it { should validate_presence_of :title }
     it { should validate_presence_of :price }
     it { should validate_presence_of :status }
-    # it { should validate_presence_of :frequency }
+    it { should validate_presence_of :frequency }
     it { should define_enum_for(:status).with_values(["Active", "Inactive"]) }
     it { should define_enum_for(:frequency).with_values(["1", "30", "90", "365"]) }
 
