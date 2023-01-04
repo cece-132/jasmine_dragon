@@ -9,6 +9,6 @@ RSpec.describe Tea, type: :model do
   end
 
   describe 'relationships' do
-    
+
   end
 end
