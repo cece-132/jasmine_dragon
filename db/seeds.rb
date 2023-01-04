@@ -8,7 +8,7 @@
 
 sub_status = ["Active", "Inactive"]
 cus_sub_status = ["Active", "Cancelled"]
-freq = [1, 30, 90, 365]
+freq = ["1", "30", "90", "365"]
 
 # Customers
 cus1 = Customer.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.safe_email, address: Faker::Address.full_address)
