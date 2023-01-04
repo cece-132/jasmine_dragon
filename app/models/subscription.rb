@@ -1,4 +1,6 @@
 class Subscription < ApplicationRecord
+  enum status: ["Active", "Inactive"]
+
   validates_presence_of :title, :price, :status, :frequency
 
   has_many :customer_subscriptions
