@@ -8,8 +8,11 @@ Maybe you can mention me or this repo in the acknowledgements too
 -->
 <div align="center">
 
-  <img src="assets/logo.png" alt="logo" width="200" height="auto" />
-  <h1>Awesome Readme Template</h1>
+  <div align="center"> 
+    <img src="./app/assets/images/jasmine_dragon_logo.jpg" alt="The logo for the service."  width="448" height="354" />
+  </div>
+
+  <h1>The Jasmine Dragon</h1>
   
   <p>
     An awesome README template for your projects! 
@@ -58,7 +61,7 @@ Maybe you can mention me or this repo in the acknowledgements too
   * [Screenshots](#camera-screenshots)
   * [Tech Stack](#space_invader-tech-stack)
   * [Features](#dart-features)
-  * [Environment Variables](#key-environment-variables)
+  * [Environment Variables](#key-endpoints)
 - [Getting Started](#toolbox-getting-started)
   * [Prerequisites](#bangbang-prerequisites)
   * [Installation](#gear-installation)
@@ -125,13 +128,14 @@ Maybe you can mention me or this repo in the acknowledgements too
 - An endpoint to see all of a customer’s subsciptions (active and cancelled)
 
 <!-- Env Variables -->
-### :key: Environment Variables
+### :key: Endpoints
 
-To run this project, you will need to add the following environment variables to your .env file
+Here are the endpoints for this project:
 
-`API_KEY`
+ - `endpoint A`
+ - `endpoint B`
+ - `endpoint C`
 
-`ANOTHER_API_KEY`
 
 <!-- Getting Started -->
 ## 	:toolbox: Getting Started
@@ -175,7 +179,7 @@ Start the server
 <!-- Deployment -->
 ### :triangular_flag_on_post: Deployment
 
-To deploy this project run
+To deploy this project open
 
 ```bash
   localhost:3000
@@ -241,4 +245,5 @@ Round of applause for the resources I was able to use in this project
  - [DB Designer](https://www.dbdesigner.net/)
  - [Awesome README](https://github.com/matiassingers/awesome-readme)
  - [Emoji Cheat Sheet](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md#travel--places)
+ - [Logo](https://forums.wynncraft.com/threads/%E2%98%95-jasmine-dragon-leaf-combat-requirement-lv60-community-war-lore-discord-lv-76.293650/)
 
