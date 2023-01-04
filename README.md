@@ -132,7 +132,11 @@ Maybe you can mention me or this repo in the acknowledgements too
 
 Here are the endpoints for this project:
 
- - `endpoint A`
+ - Customer Subscription creation. Associates a customer_id with an subscription_id
+ ```bash
+  post "/api/v1/customer_subscription"
+ ```
+
  - `endpoint B`
  - `endpoint C`
 
