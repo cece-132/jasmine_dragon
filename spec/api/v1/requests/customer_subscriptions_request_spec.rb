@@ -84,20 +84,16 @@ RSpec.describe "Customer Subscriptions" do
 
       previous_status = CustomerSubscription.last.status
       
-      cus_sub_params = ( {
-        customer_id: cus1.id,
-        subscription_id: sub1.id,
-        status: "Cancelled"
-      })
+      cus_sub_params = { status: "Cancelled" }
       headers = {"CONTENT_TYPE" => "application/json"}
 
-      patch "/api/v1/customer_subscription/", headers: headers, params: JSON.generate(customer_subscription: cus_sub_params)
+      patch "/api/v1/customer_subscription/#{cus_sub1.id}", headers: headers, params: JSON.generate(customer_subscription: cus_sub_params)
 
       cus_sub = JSON.parse(response.body, symbolize_names: true)
       updated_cus_sub = CustomerSubscription.last
       
       expect(response).to be_successful
-      expect(updated_cus_sub.status).to_not eq previous_name
+      expect(updated_cus_sub.status).to_not eq status
       expect(updated_cus_sub.status).to eq "Cancelled"
     end
 

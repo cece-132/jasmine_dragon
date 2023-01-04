@@ -9,6 +9,19 @@ class Api::V1::CustomerSubscriptionsController < ApplicationController
     end
   end
 
+  def update
+    if CustomerSubscription.exists?(params[:id])
+      cus_sub = CustomerSubscription.find(params[:id])
+      if cus_sub.update(cus_sub_params)
+        render json: CustomerSubscriptionSerializer.new(cus_sub), status: 202
+      else
+        render json: { error: 'Unsuccessful update' }, status: 404
+      end
+    else
+      render json: { error: 'No Customer Subscription found' }, status: 404
+    end
+  end
+
   private
 
   def cus_sub_params
