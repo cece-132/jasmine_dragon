@@ -43,7 +43,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'shoulda-matchers'
   gem 'simplecov'
-  # gem 'factory_bot_rails'
+  gem 'factory_bot_rails'
   # gem 'launchy'
   # gem 'orderly'
   # gem 'vcr'
