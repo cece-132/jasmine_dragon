@@ -137,8 +137,20 @@ Here are the endpoints for this project:
   post "/api/v1/customer_subscription"
  ```
 
- - `endpoint B`
- - `endpoint C`
+ - Customer Subscription update. Can update the status of the customer subscription
+ ```bash
+  patch "/api/v1/customer_subscription"
+ ```
+
+ - Customer Subscription Index. The associated customer lists all their subscriptions
+ ```bash
+  get "/customer_subscription/:id"
+ ```
+
+  - Customer Subscription Destroy. The associated customer detroys all their subscription
+ ```bash
+  delete "/customer_subscription/:id"
+ ```
 
 
 <!-- Getting Started -->
