@@ -17,10 +17,11 @@ class Api::V1::CustomerSubscriptionsController < ApplicationController
   def update
     if CustomerSubscription.exists?(params[:id])
       cus_sub = CustomerSubscription.find(params[:id])
-      if cus_sub.update(cus_sub_params)
+      begin
+        cus_sub.update(cus_sub_params)
         render json: CustomerSubscriptionSerializer.new(cus_sub), status: 202
-      else
-        render json: { error: 'Unsuccessful update' }, status: 404
+      rescue ArgumentError
+        render json: { error: "Incorrect Datatype: Status Must Be 'Active' or 'Cancelled'" }, status: 404
       end
     else
       render json: { error: 'No Customer Subscription found' }, status: 404

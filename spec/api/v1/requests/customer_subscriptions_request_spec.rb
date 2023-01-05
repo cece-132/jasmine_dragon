@@ -165,6 +165,25 @@ RSpec.describe "Customer Subscriptions" do
       expect(CustomerSubscription.last.status).to_not eq("Wrong Answer")
     end
 
+    it 'returns 404 when incorrect datatype' do
+      cus1 = Customer.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.safe_email, address: Faker::Address.full_address)
+      sub1 = Subscription.create(title: Faker::Emotion.adjective, price: Faker::Number.number(digits: 4), status: "Active", frequency: "30")
+      tea5 = Tea.create(title: Faker::Tea.variety, description: Faker::Lorem.paragraph, temperature: Faker::Number.between(from: 140, to: 212), brew_time: Faker::Number.between(from: 180, to: 300 ))
+      tea_sub1 = SubscriptionTea.create(subscription_id: sub1.id, tea_id: tea5)
+      cus_sub1 = CustomerSubscription.create(customer_id: cus1.id , subscription_id: sub1.id , status: "Active")
+
+      cus_sub_params = { status: "Wrong Answer" }
+      headers = {"CONTENT_TYPE" => "application/json"}
+      
+      patch "/api/v1/customer_subscription/#{cus_sub1.id}", headers: headers, params: JSON.generate(customer_subscription: cus_sub_params)
+
+      expect(response.status).to eq(404)
+      error_response = JSON.parse(response.body, symbolize_names: true)
+
+      expect(error_response[:error]).to eq("Incorrect Datatype: Status Must Be 'Active' or 'Cancelled'" )
+      expect(CustomerSubscription.last.status).to_not eq("Wrong Answer")
+    end
+
   end
 
   describe 'Destroy' do
