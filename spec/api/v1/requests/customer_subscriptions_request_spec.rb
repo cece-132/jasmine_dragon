@@ -41,22 +41,22 @@ RSpec.describe "Customer Subscriptions" do
         expect(subscription).to have_key(:attributes)
         expect(subscription[:attributes]).to be_a(Hash)
 
-        expect(subscription).to have_key(:title)
-        expect(subscription[:title]).to be_a(String)
+        expect(subscription[:attributes]).to have_key(:title)
+        expect(subscription[:attributes][:title]).to be_a(String)
 
-        expect(subscription).to have_key(:price)
-        expect(subscription[:price]).to be_a(Integer)
+        expect(subscription[:attributes]).to have_key(:price)
+        expect(subscription[:attributes][:price]).to be_a(Integer)
 
-        expect(subscription).to have_key(:status)
-        expect(subscription[:status]).to be_a(Integer)
+        expect(subscription[:attributes]).to have_key(:status)
+        expect(subscription[:attributes][:status]).to be_a(String)
 
-        expect(subscription).to have_key(:frequency)
-        expect(subscription[:frequency]).to be_a(Integer)
+        expect(subscription[:attributes]).to have_key(:frequency)
+        expect(subscription[:attributes][:frequency]).to be_a(String)
       end
 
       expect(customer_subscriptions[:data].length).to eq 2
     end
-    
+
   end
 
   describe 'create' do
