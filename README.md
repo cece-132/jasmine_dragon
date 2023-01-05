@@ -21,34 +21,34 @@ Maybe you can mention me or this repo in the acknowledgements too
   
 <!-- Badges -->
 <p>
-  <a href="https://github.com/Louis3797/awesome-readme-template/graphs/contributors">
-    <img src="https://img.shields.io/github/contributors/Louis3797/awesome-readme-template" alt="contributors" />
+  <a href="https://github.com/cece-132/jasmine_dragon/graphs/contributors">
+    <img src="https://img.shields.io/github/contributors/cece-132/jasmine_dragon" alt="contributors" />
   </a>
   <a href="">
-    <img src="https://img.shields.io/github/last-commit/Louis3797/awesome-readme-template" alt="last update" />
+    <img src="https://img.shields.io/github/last-commit/cece-132/jasmine_dragon" alt="last update" />
   </a>
-  <a href="https://github.com/Louis3797/awesome-readme-template/network/members">
-    <img src="https://img.shields.io/github/forks/Louis3797/awesome-readme-template" alt="forks" />
+  <a href="https://github.com/cece-132/jasmine_dragon/network/members">
+    <img src="https://img.shields.io/github/forks/cece-132/jasmine_dragon" alt="forks" />
   </a>
-  <a href="https://github.com/Louis3797/awesome-readme-template/stargazers">
-    <img src="https://img.shields.io/github/stars/Louis3797/awesome-readme-template" alt="stars" />
+  <a href="https://github.com/cece-132/jasmine_dragon/stargazers">
+    <img src="https://img.shields.io/github/stars/cece-132/jasmine_dragon" alt="stars" />
   </a>
-  <a href="https://github.com/Louis3797/awesome-readme-template/issues/">
-    <img src="https://img.shields.io/github/issues/Louis3797/awesome-readme-template" alt="open issues" />
+  <a href="https://github.com/cece-132/jasmine_dragon/issues/">
+    <img src="https://img.shields.io/github/issues/cece-132/jasmine_dragon" alt="open issues" />
   </a>
-  <a href="https://github.com/Louis3797/awesome-readme-template/blob/master/LICENSE">
-    <img src="https://img.shields.io/github/license/Louis3797/awesome-readme-template.svg" alt="license" />
+  <a href="https://github.com/cece-132/jasmine_dragon/blob/master/LICENSE">
+    <img src="https://img.shields.io/github/license/cece-132/jasmine_dragon.svg" alt="license" />
   </a>
 </p>
    
 <h4>
     <a href="https://github.com/Louis3797/awesome-readme-template/">View Demo</a>
   <span> · </span>
-    <a href="https://github.com/Louis3797/awesome-readme-template">Documentation</a>
+    <a href="https://github.com/cece-132/jasmine_dragon">Documentation</a>
   <span> · </span>
-    <a href="https://github.com/Louis3797/awesome-readme-template/issues/">Report Bug</a>
+    <a href="https://github.com/cece-132/jasmine_dragon/issues/">Report Bug</a>
   <span> · </span>
-    <a href="https://github.com/Louis3797/awesome-readme-template/issues/">Request Feature</a>
+    <a href="https://github.com/cece-132/jasmine_dragon/issues/">Request Feature</a>
   </h4>
 </div>
 
@@ -205,19 +205,19 @@ To deploy this project open
 <!-- Usage -->
 ## :eyes: Usage
 
-This API is an api that is going to manage a tea subscription service. a user can manage the subscriptions they are subscribed to as well as the tea's associated with that customer's subscription
+This API is an api that is going to manage a tea subscription service. A user can manage the subscriptions they are subscribed to as well as the tea's associated with that customer's subscription. Subscriptions have teas in this api. This is to allow the customer to have mutliple subscriptions to different types of 'Tea packages'.
 
 
 <!-- Roadmap -->
 ## :compass: Roadmap
 
-* [ ] An endpoint to subscribe a customer to a tea subscription
-* [ ] An endpoint to cancel a customer’s tea subscription
-* [ ] An endpoint to see all of a customer’s subsciptions (active and cancelled)
+* [x] An endpoint to subscribe a customer to a tea subscription
+* [x] An endpoint to cancel a customer’s tea subscription
+* [x] An endpoint to see all of a customer’s subsciptions (active and cancelled)
 
 ## :smirk: Stretch Goals
 
-* [ ] Create a Tea that holds tea information that I need for this API that has basic CRUD
+* [ ] Create a Tea API that holds tea information that I need for this API that has basic CRUD could be fun to consume.
 
 
 <!-- Contributing -->
@@ -236,13 +236,9 @@ See `contributing.md` for ways to get started.
 <!-- FAQ -->
 ## :grey_question: FAQ
 
-- Question 1
+- Why enums?
 
-  + Answer 1
-
-- Question 2
-
-  + Answer 2
+  + Being able to utilize the error handling that is already provided in ActiveRecord is a favorite for me. I was able to ensure that no matter what value was sent through the fe I am able to control how this is data is handled. Initially I was going to have all my enums represented as number values, but decided that to be more empathetic to the fe-dev or even another be-dev having the values set as word strings instead made it a lot easier to understand right off the bat.
 
 
 
