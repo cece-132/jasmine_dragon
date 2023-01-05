@@ -10,6 +10,55 @@
 require 'rails_helper'
 
 RSpec.describe "Customer Subscriptions" do
+
+  describe 'index' do
+    it 'retuns all Items' do
+      cus1 = Customer.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.safe_email, address: Faker::Address.full_address)
+      sub1 = Subscription.create(title: Faker::Emotion.adjective, price: Faker::Number.number(digits: 4), status: "Active", frequency: "30")
+      sub2 = Subscription.create(title: Faker::Emotion.adjective, price: Faker::Number.number(digits: 4), status: "Active", frequency: "30")
+      tea5 = Tea.create(title: Faker::Tea.variety, description: Faker::Lorem.paragraph, temperature: Faker::Number.between(from: 140, to: 212), brew_time: Faker::Number.between(from: 180, to: 300 ))
+      tea_sub1 = SubscriptionTea.create(subscription_id: sub1.id, tea_id: tea5)
+      cus_sub1 = CustomerSubscription.create(customer_id: cus1.id , subscription_id: sub1.id , status: "Cancelled")
+      cus_sub2 = CustomerSubscription.create(customer_id: cus1.id , subscription_id: sub2.id , status: "Active")
+
+      get "/api/v1/customer_subscription/#{cus1.id}"
+
+      expect(response).to be_successful
+
+      customer_subscriptions = JSON.parse(response.body, symbolize_names: true)
+
+      expect(customer_subscriptions).to be_a Hash
+      expect(customer_subscriptions).to have_key(:data)
+      expect(customer_subscriptions[:data]).to be_a Array
+
+      customer_subscriptions[:data].each do |subscription|
+        expect(subscription).to have_key(:id)
+        expect(subscription[:id]).to be_a(String)
+
+        expect(subscription).to have_key(:type)
+        expect(subscription[:type]).to be_a(String)
+
+        expect(subscription).to have_key(:attributes)
+        expect(subscription[:attributes]).to be_a(Hash)
+
+        expect(subscription).to have_key(:title)
+        expect(subscription[:title]).to be_a(String)
+
+        expect(subscription).to have_key(:price)
+        expect(subscription[:price]).to be_a(Integer)
+
+        expect(subscription).to have_key(:status)
+        expect(subscription[:status]).to be_a(Integer)
+
+        expect(subscription).to have_key(:frequency)
+        expect(subscription[:frequency]).to be_a(Integer)
+      end
+
+      expect(customer_subscriptions[:data].length).to eq 2
+    end
+    
+  end
+
   describe 'create' do
     it 'can create an customer subscription' do
 

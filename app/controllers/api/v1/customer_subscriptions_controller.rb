@@ -1,4 +1,9 @@
 class Api::V1::CustomerSubscriptionsController < ApplicationController
+  before_action :find_customer, only: [:index]
+  def index
+    subscriptions = @customer.all_subsciptions(params[:id])
+    render json: SubscriptionSerializer.new(subscriptions)
+  end
 
   def create
     cus_sub = CustomerSubscription.new(cus_sub_params)
@@ -38,6 +43,10 @@ class Api::V1::CustomerSubscriptionsController < ApplicationController
     else
       params.permit(:customer_id, :subscription_id, :status)
     end
+  end
+
+  def find_customer
+    @customer = Customer.find(params[:id])
   end
 
 end
