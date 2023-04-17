@@ -41,7 +41,6 @@ group :development, :test do
   gem 'capybara'
   gem 'figaro'
   gem 'pry'
-  gem 'rspec-rails'
   gem 'shoulda-matchers'
   gem 'simplecov'
   gem 'factory_bot_rails'
