@@ -32,6 +32,7 @@ gem 'rack-cors'
 gem 'jsonapi-serializer'
 gem 'faker'
 gem 'faraday'
+gem "net-http"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
